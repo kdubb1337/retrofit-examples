@@ -10,6 +10,7 @@ public class JsonUtil {
 	private final ObjectMapper objectMapper = new ObjectMapper();
 	private static final Logger LOG = LoggerFactory.getLogger(JsonUtil.class);
 	
+	// For those times we want a plain String as JSON
 	public String writeValueAsString(String value) {
 		try {
 			return objectMapper.writeValueAsString(value);

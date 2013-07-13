@@ -8,37 +8,38 @@ import retrofit.http.HEAD;
 import retrofit.http.POST;
 import retrofit.http.PUT;
 
+import com.kdubb.retrofitexamples.Constants;
 import com.kdubb.retrofitexamples.domain.CustomChild;
 import com.kdubb.retrofitexamples.domain.CustomObject;
 
 public interface SimpleApi {
-	@GET("/simple.json")
+	@GET(Constants.URL_SIMPLE)
 	public String simpleGet();
 	
-	@POST("/simple")
+	@POST(Constants.URL_SIMPLE)
 	public String simplePost();
 	
-	@DELETE("/simple")
+	@DELETE(Constants.URL_SIMPLE)
 	public String simpleDelete();
 	
-	@PUT("/simple")
+	@PUT(Constants.URL_SIMPLE)
 	public String simplePut();
 	
-	@HEAD("/simple")
+	@HEAD(Constants.URL_SIMPLE)
 	public String simpleHead();
 	
-	@GET("/simple/boolean")
+	@GET(Constants.URL_SIMPLE_BOOLEAN)
 	public boolean simpleBoolean();
 	
-	@GET("/simple/integer")
+	@GET(Constants.URL_SIMPLE_INTEGER)
 	public int simpleInteger();
 	
-	@GET("/simple/custom")
+	@GET(Constants.URL_SIMPLE_CUSTOM)
 	public CustomObject simpleCustom();
 	
-	@GET("/simple/child")
+	@GET(Constants.URL_SIMPLE_CHILD)
 	public CustomChild simpleChild();
 	
-	@GET("/simple/collection")
+	@GET(Constants.URL_SIMPLE_COLLECTION)
 	public Collection<String> simpleCollection();
 }
