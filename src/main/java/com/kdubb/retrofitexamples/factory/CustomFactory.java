@@ -2,7 +2,6 @@ package com.kdubb.retrofitexamples.factory;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.stereotype.Service;
 
@@ -17,14 +16,13 @@ public class CustomFactory {
 		customObject.setB(123456);
 		customObject.setC(true);
 		customObject.setD(1.23456);
-		customObject.setE(new Date());
 		
 		Collection<String> strings = new ArrayList<String>();
 		
 		for(int i = 1; i < 4; i++)
 			strings.add("string #" + i);
 			
-		customObject.setF(strings);
+		customObject.setE(strings);
 		
 		return customObject;
 	}
@@ -35,14 +33,13 @@ public class CustomFactory {
 		customChild.setB(123456);
 		customChild.setC(true);
 		customChild.setD(1.23456);
-		customChild.setE(new Date());
 		
 		Collection<String> strings = new ArrayList<String>();
 		
 		for(int i = 1; i < 4; i++)
 			strings.add("string #" + i);
 			
-		customChild.setF(strings);
+		customChild.setE(strings);
 		customChild.setChildOnly("Only the child has this field");
 		
 		return customChild;

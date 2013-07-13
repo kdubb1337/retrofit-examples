@@ -12,7 +12,7 @@ import com.kdubb.retrofitexamples.domain.CustomChild;
 import com.kdubb.retrofitexamples.domain.CustomObject;
 
 public interface SimpleApi {
-	@GET("/simple")
+	@GET("/simple.json")
 	public String simpleGet();
 	
 	@POST("/simple")

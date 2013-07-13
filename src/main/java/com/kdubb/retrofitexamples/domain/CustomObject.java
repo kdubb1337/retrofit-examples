@@ -1,15 +1,13 @@
 package com.kdubb.retrofitexamples.domain;
 
 import java.util.Collection;
-import java.util.Date;
 
 public class CustomObject {
 	private String a;
 	private int b;
 	private boolean c;
 	private double d;
-	private Date e;
-	private Collection<String> f;
+	private Collection<String> e;
 	
 	public String getA() {
 		return a;
@@ -43,19 +41,11 @@ public class CustomObject {
 		this.d = d;
 	}
 	
-	public Date getE() {
+	public Collection<String> getE() {
 		return e;
 	}
-	
-	public void setE(Date e) {
+
+	public void setE(Collection<String> e) {
 		this.e = e;
-	}
-
-	public Collection<String> getF() {
-		return f;
-	}
-
-	public void setF(Collection<String> f) {
-		this.f = f;
 	}
 }
