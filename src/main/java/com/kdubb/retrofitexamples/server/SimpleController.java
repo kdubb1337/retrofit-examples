@@ -15,7 +15,6 @@ import com.kdubb.retrofitexamples.api.SimpleApi;
 import com.kdubb.retrofitexamples.domain.CustomChild;
 import com.kdubb.retrofitexamples.domain.CustomObject;
 import com.kdubb.retrofitexamples.factory.CustomFactory;
-import com.kdubb.retrofitexamples.util.JsonUtil;
 
 @Controller
 @RequestMapping
@@ -23,41 +22,39 @@ public class SimpleController implements SimpleApi {
 	@Inject
 	private CustomFactory customFactory;
 
-	private final JsonUtil jsonUtil = new JsonUtil();
-	
 	@Override @ResponseBody
 	@RequestMapping(value=Constants.URL_SIMPLE, method=RequestMethod.GET)
 	public String simpleGet() {
 		// Strings aren't auto-converted to JSON
-		return jsonUtil.writeValueAsString("You called simpleGet");
+		return "\"You called simpleGet\"";
 	}
 
 	@Override @ResponseBody
 	@RequestMapping(value=Constants.URL_SIMPLE, method=RequestMethod.POST)
 	public String simplePost() {
 		// Strings aren't auto-converted to JSON
-		return jsonUtil.writeValueAsString("You called simplePost");
+		return "\"You called simplePost\"";
 	}
 
 	@Override @ResponseBody
 	@RequestMapping(value=Constants.URL_SIMPLE, method=RequestMethod.DELETE)
 	public String simpleDelete() {
 		// Strings aren't auto-converted to JSON
-		return jsonUtil.writeValueAsString("You called simpleDelete");
+		return "\"You called simpleDelete\"";
 	}
 
 	@Override @ResponseBody
 	@RequestMapping(value=Constants.URL_SIMPLE, method=RequestMethod.PUT)
 	public String simplePut() {
 		// Strings aren't auto-converted to JSON
-		return jsonUtil.writeValueAsString("You called simplePut");
+		return "\"You called simplePut\"";
 	}
 
 	@Override @ResponseBody
 	@RequestMapping(value=Constants.URL_SIMPLE, method=RequestMethod.HEAD)
 	public String simpleHead() {
 		// Strings aren't auto-converted to JSON
-		return jsonUtil.writeValueAsString("You called simpleHead");
+		return "\"You called simpleHead\"";
 	}
 
 	@Override @ResponseBody
