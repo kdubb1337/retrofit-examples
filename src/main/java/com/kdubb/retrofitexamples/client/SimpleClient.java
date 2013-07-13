@@ -1,15 +1,9 @@
 package com.kdubb.retrofitexamples.client;
 
-import java.lang.reflect.Type;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import retrofit.RestAdapter;
-import retrofit.converter.ConversionException;
-import retrofit.converter.Converter;
-import retrofit.mime.TypedInput;
-import retrofit.mime.TypedOutput;
 
 import com.kdubb.retrofitexamples.api.SimpleApi;
 
