@@ -7,4 +7,5 @@ public class Constants {
 	public static final String URL_SIMPLE_CUSTOM = "/simple/custom";
 	public static final String URL_SIMPLE_CHILD = "/simple/child";
 	public static final String URL_SIMPLE_COLLECTION = "/simple/collection";
+	public static final String URL_SIMPLE_DATE = "/simple/date";
 }

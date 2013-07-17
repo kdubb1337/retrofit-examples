@@ -17,6 +17,7 @@ public class SimpleClient {
 	private static final Logger LOG = LoggerFactory.getLogger(SimpleClient.class);
 	
 	public static void main(String[] args) {
+		// Build the Retrofit REST adaptor pointing to the URL specified
 		RestAdapter restAdapter = new RestAdapter.Builder()
 	        .setServer(API_URL)
 	        .build();
