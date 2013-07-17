@@ -86,7 +86,7 @@ public class SimpleController implements SimpleApi {
 	public Collection<String> simpleCollection() {
 		Collection<String> strings = new ArrayList<String>();
 		
-		// Results in [string #1, string #2, string #3]
+		// Results in [String #1, String #2, String #3]
 		for(int i = 1; i < 4; i++)
 			strings.add("String #" + i);
 		

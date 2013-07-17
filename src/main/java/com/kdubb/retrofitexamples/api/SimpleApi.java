@@ -1,7 +1,6 @@
 package com.kdubb.retrofitexamples.api;
 
 import java.util.Collection;
-import java.util.Date;
 
 import retrofit.http.DELETE;
 import retrofit.http.GET;
