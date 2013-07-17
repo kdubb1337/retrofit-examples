@@ -1,6 +1,7 @@
 package com.kdubb.retrofitexamples.api;
 
 import java.util.Collection;
+import java.util.Date;
 
 import retrofit.http.DELETE;
 import retrofit.http.GET;
@@ -33,9 +34,6 @@ public interface SimpleApi {
 	
 	@GET(Constants.URL_SIMPLE_INTEGER)
 	public int simpleInteger();
-	
-	@GET(Constants.URL_SIMPLE_DATE)
-	public Date simpleDate();
 	
 	@GET(Constants.URL_SIMPLE_CUSTOM)
 	public CustomObject simpleCustom();
