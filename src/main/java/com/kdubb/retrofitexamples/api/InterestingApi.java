@@ -6,6 +6,7 @@ import retrofit.http.Body;
 import retrofit.http.GET;
 import retrofit.http.Header;
 import retrofit.http.Headers;
+import retrofit.http.POST;
 import retrofit.http.Path;
 import retrofit.http.Query;
 
@@ -18,7 +19,7 @@ public interface InterestingApi {
 	@GET(Constants.URL_INTERESTING_PATH)
 	public String getWithPath(@Path(Constants.PATH_ID) String id);
 	
-	@GET(Constants.URL_INTERESTING_BODY)
+	@POST(Constants.URL_INTERESTING_BODY)
 	public String getWithBody(@Body String id);
 	
 	@GET(Constants.URL_INTERESTING_QUERY)

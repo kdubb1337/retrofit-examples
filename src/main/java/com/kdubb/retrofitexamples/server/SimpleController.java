@@ -17,7 +17,6 @@ import com.kdubb.retrofitexamples.domain.CustomObject;
 import com.kdubb.retrofitexamples.factory.CustomFactory;
 
 @Controller
-@RequestMapping
 public class SimpleController implements SimpleApi {
 	@Inject
 	private CustomFactory customFactory;

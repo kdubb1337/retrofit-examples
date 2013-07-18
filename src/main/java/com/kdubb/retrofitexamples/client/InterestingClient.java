@@ -1,18 +1,15 @@
 package com.kdubb.retrofitexamples.client;
 
 import org.codehaus.jackson.map.ObjectMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import retrofit.RestAdapter;
 
 import com.kdubb.retrofitexamples.api.InterestingApi;
 import com.kdubb.retrofitexamples.converter.JacksonConverter;
 
-public class JacksonClient {
+public class InterestingClient {
 	private static final String API_URL = "http://localhost:8080/";
-	private static final Logger LOG = LoggerFactory.getLogger(SimpleClient.class);
-	
+
 	public static void main(String[] args) {
 		// Create our Converter
 		JacksonConverter converter = new JacksonConverter(new ObjectMapper());
@@ -26,5 +23,12 @@ public class JacksonClient {
 	
 	    // Create an instance of our InterestingApi interface.
 		InterestingApi api = restAdapter.create(InterestingApi.class);
+		
+		// Call each of the methods and output the results
+		System.out.println("api.getDate()={" + api.getDate() + "}");
+		System.out.println("api.getWithPath()={" + api.getWithPath("my String 1234") + "}");
+		System.out.println("api.getWithQuery()={" + api.getWithQuery("my String 1234") + "}");
+		System.out.println("api.getWithBody()={" + api.getWithBody("my String 1234") + "}");
+		System.out.println("api.getWithDynamicHeader()={" + api.getWithDynamicHeader("max-age=26000") + "}");
 	}
 }
