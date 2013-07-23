@@ -9,6 +9,8 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 import com.kdubb.retrofitexamples.api.AsynchronousApi;
+import com.kdubb.retrofitexamples.api.InterestingApi;
+import com.kdubb.retrofitexamples.api.SimpleApi;
 
 public class AsynchronousClient {
 	private static final String API_URL = "http://localhost:8080/";
@@ -22,15 +24,21 @@ public class AsynchronousClient {
 	        .setServer(API_URL)
 	        .build();
 	
-	    // Create an instance of our SimpleClient interface.
-		AsynchronousApi api = restAdapter.create(AsynchronousApi.class);
+		// Create an instance of our InterestingApi interface.
+		InterestingApi synchronousApi = restAdapter.create(InterestingApi.class);
 		
-		for(int i = 0; i < 5; i++)
-			api.getWithQuery(Integer.toString(i), new Callback<String>() {
+	    // Create an instance of our AsynchronousApi interface.
+		AsynchronousApi asyncApi = restAdapter.create(AsynchronousApi.class);
+		
+		for(int i = 0; i < 10; i++)
+			LOG.info("synchronousApi " + synchronousApi.getWithPath(Integer.toString(i)));
+		
+		for(int i = 0; i < 10; i++)
+			asyncApi.getWithQuery(Integer.toString(i), new Callback<String>() {
 
 				@Override
 				public void success(String t, Response response) {
-					LOG.info("SUCCESS (" + t + ")");
+					LOG.info("asynchronousApi (" + t + ")");
 				}
 				@Override
 				public void failure(RetrofitError error) {
