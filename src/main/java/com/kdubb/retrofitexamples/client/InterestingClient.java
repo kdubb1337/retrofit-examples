@@ -30,5 +30,6 @@ public class InterestingClient {
 		System.out.println("api.getWithQuery()={" + api.getWithQuery("my String 1234") + "}");
 		System.out.println("api.getWithBody()={" + api.getWithBody("my String 1234") + "}");
 		System.out.println("api.getWithDynamicHeader()={" + api.getWithDynamicHeader("max-age=26000") + "}");
+		System.out.println("api.getWithFixedHeaders()={" + api.getWithFixedHeaders() + "}");
 	}
 }

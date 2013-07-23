@@ -28,7 +28,7 @@ public interface InterestingApi {
 	@GET(Constants.URL_INTERESTING_HEADER)
 	public String getWithDynamicHeader(@Header(Constants.HEADER_CACHE_CONTROL) String cacheControlValue);
 	
-	@Headers({"X-Foo: Bar", "X-Ping: Pong"})
-	@GET(Constants.URL_INTERESTING_HEADERS)
+	@Headers("Cache-Control: max-age=640000")
+	@GET(Constants.URL_INTERESTING_HEADER)
 	public String getWithFixedHeaders();
 }
