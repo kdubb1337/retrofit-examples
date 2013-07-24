@@ -17,10 +17,10 @@ public class AsynchronousClient {
 	private static final Logger LOG = LoggerFactory.getLogger(AsynchronousClient.class);
 	
 	public static void main(String[] args) {
-		// Build the Retrofit REST adaptor pointing to the URL specified, with the Converter.
-		// Note: The Converter must be set before the .build() command
+		// Build the Retrofit REST adaptor pointing to the URL specified
+		// with a ThrottlingInterceptor allowing only 1 request per second
 		RestAdapter restAdapter = new RestAdapter.Builder()
-			.setRequestInterceptor(new ThrottlingInterceptor(2000L))
+			.setRequestInterceptor(new ThrottlingInterceptor(1000L))
 	        .setServer(API_URL)
 	        .build();
 	
@@ -34,7 +34,7 @@ public class AsynchronousClient {
 			LOG.info("synchronousApi " + synchronousApi.getWithPath(Integer.toString(i)));
 		
 		for(int i = 0; i < 10; i++)
-			asyncApi.getWithQuery(Integer.toString(i), new Callback<String>() {
+			asyncApi.getWithPath(Integer.toString(i), new Callback<String>() {
 
 				@Override
 				public void success(String t, Response response) {
